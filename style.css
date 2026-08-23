@@ -1,0 +1,147 @@
+:root {
+  --bg-deep: #0e1220;
+  --bg-panel: #171c30;
+  --gold: #c49a4a;
+  --gold-light: #deb86e;
+  --text: #f1ece0;
+  --text-dim: #a9a6b0;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(circle at 50% 20%, #1a2038 0%, var(--bg-deep) 65%);
+  color: var(--text);
+  font-family: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
+}
+
+.wrap {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8vh 6vw 4vh;
+  gap: 18px;
+}
+
+.emblem {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background:
+    radial-gradient(circle, var(--gold-light) 0 3px, transparent 4px) center/100% 100% no-repeat,
+    conic-gradient(from 0deg, transparent 0 10deg, var(--gold) 10deg 12deg, transparent 12deg 35deg,
+      var(--gold) 35deg 37deg, transparent 37deg 60deg, var(--gold) 60deg 62deg, transparent 62deg 85deg,
+      var(--gold) 85deg 87deg, transparent 87deg 100deg, var(--gold) 100deg 102deg, transparent 102deg 125deg,
+      var(--gold) 125deg 127deg, transparent 127deg 150deg, var(--gold) 150deg 152deg, transparent 152deg 175deg,
+      var(--gold) 175deg 177deg, transparent 177deg 200deg, var(--gold) 200deg 202deg, transparent 202deg 225deg,
+      var(--gold) 225deg 227deg, transparent 227deg 250deg, var(--gold) 250deg 252deg, transparent 252deg 275deg,
+      var(--gold) 275deg 277deg, transparent 277deg 300deg, var(--gold) 300deg 302deg, transparent 302deg 325deg,
+      var(--gold) 325deg 327deg, transparent 327deg 350deg, var(--gold) 350deg 352deg, transparent 352deg 360deg);
+  opacity: 0.9;
+}
+
+.eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--gold-light);
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", sans-serif;
+}
+
+.quote {
+  max-width: 640px;
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--text);
+}
+
+.kaynak {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-dim);
+  font-family: -apple-system, "Segoe UI", sans-serif;
+}
+
+.search {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  width: min(480px, 90vw);
+}
+
+.search input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #2c3350;
+  background: var(--bg-panel);
+  color: var(--text);
+  font-size: 14px;
+  font-family: -apple-system, "Segoe UI", sans-serif;
+}
+
+.search input:focus { outline: 1px solid var(--gold); }
+
+.search button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold-light);
+  cursor: pointer;
+  font-family: -apple-system, "Segoe UI", sans-serif;
+}
+
+.search button:hover { background: rgba(196,154,74,0.12); }
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: -apple-system, "Segoe UI", sans-serif;
+  transition: opacity 0.15s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #171225;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  border: 1px solid #3a4066;
+  color: var(--text-dim);
+}
+
+.btn:hover { opacity: 0.85; }
+
+.footer {
+  margin-top: 28px;
+  max-width: 520px;
+  font-size: 11px;
+  color: #6f6c7c;
+  font-family: -apple-system, "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dot { display: none; }
