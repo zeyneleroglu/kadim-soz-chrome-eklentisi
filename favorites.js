@@ -30,7 +30,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    var today = window.KADIM_BUGUN;
     var favBtn = document.getElementById("fav-toggle");
     var favLabel = favBtn.querySelector("span");
     var countEl = document.getElementById("fav-count");
@@ -40,6 +39,7 @@
     var panels = [document.getElementById("panel-today"), document.getElementById("panel-favs")];
 
     function renderButton(list) {
+      var today = window.KADIM_AKTIF;
       var on = !!today && indexOf(list, today.text) !== -1;
       favBtn.setAttribute("aria-pressed", String(on));
       favLabel.textContent = on ? "Favorilerde" : "Favorilere ekle";
@@ -93,6 +93,7 @@
     }
 
     favBtn.addEventListener("click", function () {
+      var today = window.KADIM_AKTIF;
       if (!today) return;
       var list = load();
       var i = indexOf(list, today.text);
@@ -143,6 +144,9 @@
         }
       });
     });
+
+    // Önceki/sonraki gezintisinde kalp düğmesi gösterilen söze göre güncellenir
+    document.addEventListener("kadim:degisti", function () { renderButton(load()); });
 
     // Başka bir açık sekmede favori değişirse bu sayfayı da güncelle
     window.addEventListener("storage", function (e) {

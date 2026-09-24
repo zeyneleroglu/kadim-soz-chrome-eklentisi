@@ -253,13 +253,87 @@ body {
   color: var(--text-dim);
 }
 
+/* ---------- Söz gezintisi ---------- */
+.quote,
+.kaynak {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.card.swapping .quote,
+.card.swapping .kaynak { opacity: 0; }
+.card.swapping[data-dir="next"] .quote { transform: translateX(-14px); }
+.card.swapping[data-dir="prev"] .quote { transform: translateX(14px); }
+
+.quote-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.nav-btn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-soft);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease),
+    background-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.nav-btn:hover { color: var(--gold-light); border-color: var(--border); background: rgba(196, 154, 74, 0.08); }
+#quote-prev:hover { transform: translateX(-2px); }
+#quote-next:hover { transform: translateX(2px); }
+.nav-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nav-mid {
+  min-width: 96px;
+  min-height: 34px; /* "Bugüne dön" görünüp kaybolunca kart zıplamasın */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-sans);
+}
+.nav-pos {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.nav-home {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--gold-light);
+  font-family: inherit;
+  font-size: 11.5px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+}
+.nav-home[hidden] { display: none; }
+
 /* ---------- Paylaşım ---------- */
 .share {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 22px;
+  margin-top: 16px;
 }
 
 .share-btn {
