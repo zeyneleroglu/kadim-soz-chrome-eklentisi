@@ -46,12 +46,17 @@
     }, 180);
   }
 
+  // Arama sonuçlarından doğrudan bir söze gitmek için
+  window.KadimSoz = {
+    goTo: function (target) {
+      var step = target - index;
+      if (step) go(step);
+    }
+  };
+
   prevBtn.addEventListener("click", function () { go(-1); });
   nextBtn.addEventListener("click", function () { go(1); });
-  homeBtn.addEventListener("click", function () {
-    var step = todayIndex - index;
-    if (step) go(step);
-  });
+  homeBtn.addEventListener("click", function () { window.KadimSoz.goTo(todayIndex); });
 
   // Klavye: ← / → (yazı alanında veya sekme listesindeyken devre dışı)
   document.addEventListener("keydown", function (e) {

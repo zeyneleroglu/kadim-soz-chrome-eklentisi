@@ -35,8 +35,9 @@
     var countEl = document.getElementById("fav-count");
     var listEl = document.getElementById("fav-list");
     var emptyEl = document.getElementById("fav-empty");
-    var tabs = [document.getElementById("tab-today"), document.getElementById("tab-favs")];
-    var panels = [document.getElementById("panel-today"), document.getElementById("panel-favs")];
+    var tabs = Array.prototype.slice.call(document.querySelectorAll(".tabs [role=tab]"));
+    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
+    var favTab = document.getElementById("tab-favs");
 
     function renderButton(list) {
       var today = window.KADIM_AKTIF;
@@ -120,7 +121,7 @@
         var i = indexOf(list, text);
         if (i !== -1) { list.splice(i, 1); save(list); }
         render();
-        tabs[1].focus();
+        favTab.focus();
       }, 250);
     });
 
@@ -140,7 +141,8 @@
       t.addEventListener("keydown", function (e) {
         if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
           e.preventDefault();
-          select((i + 1) % tabs.length, true);
+          var step = e.key === "ArrowRight" ? 1 : -1;
+          select((i + step + tabs.length) % tabs.length, true);
         }
       });
     });

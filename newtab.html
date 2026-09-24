@@ -22,6 +22,10 @@
       <button id="tab-favs" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-favs" tabindex="-1">
         Favorilerim <span id="fav-count" class="tab-count">0</span>
       </button>
+      <button id="tab-search" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-search" tabindex="-1" title="Sözlerde ara (/)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        Ara
+      </button>
     </nav>
 
     <section id="panel-today" class="panel" role="tabpanel" aria-labelledby="tab-today">
@@ -66,6 +70,17 @@
       <p id="fav-empty" class="fav-empty">Henüz favori söz yok. Beğendiğiniz sözü kalp simgesiyle buraya ekleyebilirsiniz.</p>
     </section>
 
+    <section id="panel-search" class="panel" role="tabpanel" aria-labelledby="tab-search" hidden>
+      <p class="eyebrow">Sözlerde Ara</p>
+      <div class="qsearch">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        <input id="qsearch-input" type="search" placeholder="Kelime, kaynak veya yazar…" autocomplete="off" spellcheck="false" aria-label="Sözlerde ara" aria-controls="qsearch-list">
+        <kbd>/</kbd>
+      </div>
+      <p id="qsearch-info" class="qsearch-info" aria-live="polite"></p>
+      <ul id="qsearch-list" class="fav-list"></ul>
+    </section>
+
     <form class="search" action="https://www.google.com/search" method="GET" target="_blank">
       <input type="search" name="q" placeholder="Web'de ara…" autocomplete="off" aria-label="Web'de ara">
       <button type="submit">Ara</button>
@@ -87,5 +102,6 @@
   <script src="script.js"></script>
   <script src="share.js"></script>
   <script src="favorites.js"></script>
+  <script src="search.js"></script>
 </body>
 </html>

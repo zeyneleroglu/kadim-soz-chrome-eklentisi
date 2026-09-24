@@ -115,6 +115,7 @@ body {
 .wrap > :nth-child(5) { animation-delay: 0.52s; }
 .wrap > :nth-child(6) { animation-delay: 0.65s; }
 .wrap > :nth-child(7) { animation-delay: 0.75s; }
+.wrap > :nth-child(8) { animation-delay: 0.85s; }
 .wrap > .panel { animation-delay: 0.28s; }
 /* Sekme değiştirildiğinde gecikmesiz, kısa geçiş */
 .wrap > .panel.switched { animation: rise 0.5s var(--ease) forwards; }
@@ -427,6 +428,14 @@ body {
   line-height: 16px;
 }
 .tab-count[hidden] { display: none; }
+.tab svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
 
 .panel {
   width: 100%;
@@ -529,6 +538,91 @@ body {
   color: var(--text-dim);
 }
 .fav-empty[hidden] { display: none; }
+
+/* ---------- Sözlerde arama ---------- */
+.qsearch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 720px;
+  padding: 4px 8px 4px 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text-faint);
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+.qsearch:focus-within {
+  border-color: var(--gold);
+  background: var(--surface-strong);
+  box-shadow: 0 0 0 4px rgba(196, 154, 74, 0.14);
+}
+.qsearch svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+.qsearch input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+}
+.qsearch input::placeholder { color: var(--text-faint); }
+.qsearch input::-webkit-search-cancel-button { display: none; }
+.qsearch kbd {
+  flex: none;
+  padding: 2px 7px;
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.qsearch-info {
+  margin: -8px 0 0;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.qsearch-item { padding: 0; }
+.qsearch-hit {
+  display: block;
+  width: 100%;
+  padding: 18px 24px 14px;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.qsearch-item:hover,
+.qsearch-item:focus-within { border-color: var(--border); background: var(--surface-strong); }
+.qsearch-hit .fav-quote { display: block; }
+.qsearch-hit .fav-meta { display: flex; }
+.qsearch-no { color: var(--text-faint); font-variant-numeric: tabular-nums; }
+
+.qsearch-item mark {
+  padding: 0 1px;
+  border-radius: 3px;
+  background: rgba(196, 154, 74, 0.28);
+  color: inherit;
+}
 
 /* ---------- Arama ---------- */
 .search {
