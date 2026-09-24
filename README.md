@@ -20,6 +20,7 @@ kitabından ve kadim kültürel geleneklerden derlenen kısa, bilgilendirici bir
 
 - `manifest.json` — Manifest V3 eklenti tanımı
 - `newtab.html`, `style.css`, `script.js` — yeni sekme arayüzü
+- `theme.js` — koyu/açık tema geçişi (tercih yalnızca yerel `localStorage`'da tutulur)
 - `data.js` — kitaptan ve kadim kültürel kaynaklardan derlenen söz listesi
 - `icons/` — eklenti simgeleri
 

@@ -2,20 +2,30 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
 <title>Yeni Sekme — Zeynel Eroğlu</title>
 <link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
 </head>
 <body>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Temayı değiştir">
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+  </button>
+
   <main class="wrap">
     <div class="emblem" aria-hidden="true"></div>
 
     <p class="eyebrow">Günün Kadim Sözü</p>
 
-    <blockquote id="quote" class="quote">Yükleniyor…</blockquote>
-    <p id="kaynak" class="kaynak"></p>
+    <figure class="card">
+      <blockquote id="quote" class="quote">Yükleniyor…</blockquote>
+      <figcaption id="kaynak" class="kaynak"></figcaption>
+    </figure>
 
     <form class="search" action="https://www.google.com/search" method="GET" target="_blank">
-      <input type="text" name="q" placeholder="Web'de ara…" autocomplete="off">
+      <input type="search" name="q" placeholder="Web'de ara…" autocomplete="off" aria-label="Web'de ara">
       <button type="submit">Ara</button>
     </form>
 
