@@ -24,7 +24,7 @@ kitabından ve kadim kültürel geleneklerden derlenen kısa, bilgilendirici bir
 - `share.js` — günün sözünü 1080×1080 PNG kart olarak panoya kopyalama / indirme (tamamen yerel, canvas ile)
 - `search.js` — "Ara" sekmesi; söz metni ve kaynakta anlık, Türkçe karakter duyarsız arama (`/` kısayolu)
 - `favorites.js` — "Favorilerim" sekmesi; favoriler yalnızca yerel `localStorage`'da tutulur
-- `data.js` — kitaptan ve kadim kültürel kaynaklardan derlenen söz listesi
+- `data.js` — kitaptan ve kadim kültürel kaynaklardan derlenen söz listesi (her kayıt: `text`, `kaynak`, `yazar`)
 - `icons/` — eklenti simgeleri
 
 ## İçerik ve Kaynak
