@@ -22,6 +22,7 @@ kitabından ve kadim kültürel geleneklerden derlenen kısa, bilgilendirici bir
 - `newtab.html`, `style.css`, `script.js` — yeni sekme arayüzü
 - `theme.js` — koyu/açık tema geçişi (tercih yalnızca yerel `localStorage`'da tutulur)
 - `share.js` — günün sözünü 1080×1080 PNG kart olarak panoya kopyalama / indirme (tamamen yerel, canvas ile)
+- `favorites.js` — "Favorilerim" sekmesi; favoriler yalnızca yerel `localStorage`'da tutulur
 - `data.js` — kitaptan ve kadim kültürel kaynaklardan derlenen söz listesi
 - `icons/` — eklenti simgeleri
 

@@ -7,6 +7,7 @@
   var dayOfYear = Math.floor(diff / 86400000);
 
   var item = KADIM_SOZLER[dayOfYear % KADIM_SOZLER.length];
+  window.KADIM_BUGUN = item;
 
   document.getElementById("quote").textContent = item.text;
   document.getElementById("kaynak").textContent = "— " + item.kaynak;

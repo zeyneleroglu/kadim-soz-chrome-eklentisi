@@ -17,12 +17,24 @@
   <main class="wrap">
     <div class="emblem" aria-hidden="true"></div>
 
+    <nav class="tabs" role="tablist" aria-label="Görünüm">
+      <button id="tab-today" class="tab" type="button" role="tab" aria-selected="true" aria-controls="panel-today">Günün Sözü</button>
+      <button id="tab-favs" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-favs" tabindex="-1">
+        Favorilerim <span id="fav-count" class="tab-count">0</span>
+      </button>
+    </nav>
+
+    <section id="panel-today" class="panel" role="tabpanel" aria-labelledby="tab-today">
     <p class="eyebrow">Günün Kadim Sözü</p>
 
     <figure class="card">
       <blockquote id="quote" class="quote">Yükleniyor…</blockquote>
       <figcaption id="kaynak" class="kaynak"></figcaption>
-      <div class="share" role="group" aria-label="Sözü görsel olarak paylaş">
+      <div class="share" role="group" aria-label="Sözü kaydet veya paylaş">
+        <button id="fav-toggle" class="share-btn fav-btn" type="button" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>
+          <span>Favorilere ekle</span>
+        </button>
         <button id="share-copy" class="share-btn" type="button" title="Sözü görsel kart olarak panoya kopyala">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
           <span>Kart olarak kopyala</span>
@@ -34,6 +46,13 @@
       </div>
       <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
     </figure>
+    </section>
+
+    <section id="panel-favs" class="panel" role="tabpanel" aria-labelledby="tab-favs" hidden>
+      <p class="eyebrow">Favorilerim</p>
+      <ul id="fav-list" class="fav-list"></ul>
+      <p id="fav-empty" class="fav-empty">Henüz favori söz yok. Beğendiğiniz sözü kalp simgesiyle buraya ekleyebilirsiniz.</p>
+    </section>
 
     <form class="search" action="https://www.google.com/search" method="GET" target="_blank">
       <input type="search" name="q" placeholder="Web'de ara…" autocomplete="off" aria-label="Web'de ara">
@@ -55,5 +74,6 @@
   <script src="data.js"></script>
   <script src="script.js"></script>
   <script src="share.js"></script>
+  <script src="favorites.js"></script>
 </body>
 </html>
