@@ -54,7 +54,7 @@
     ctx.restore();
   }
 
-  function render(quote, source) {
+  function render(label, quote, yazar, source) {
     var c = {
       bg: cssVar("--bg"),
       glow: cssVar("--bg-glow"),
@@ -96,13 +96,13 @@
     ctx.fillStyle = c.goldLight;
     ctx.font = "500 22px " + f.sans;
     if ("letterSpacing" in ctx) ctx.letterSpacing = "6px";
-    ctx.fillText("GÜNÜN KADİM SÖZÜ", SIZE / 2, 238);
+    ctx.fillText(label.toLocaleUpperCase("tr-TR"), SIZE / 2, 238);
     if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
 
     // Söz: sığana kadar yazı boyutunu küçült
     var maxW = SIZE - PAD * 2;
     var areaTop = 360;
-    var areaBottom = SIZE - 250;
+    var areaBottom = SIZE - 270;
     var size = 62;
     var lines, lh;
     do {
@@ -129,10 +129,21 @@
       ctx.fillText(lines[i], SIZE / 2, y + i * lh);
     }
 
-    // Kaynak
-    ctx.fillStyle = c.dim;
-    ctx.font = "400 26px " + f.sans;
-    ctx.fillText(source, SIZE / 2, areaBottom + 70);
+    // Yazar ve kaynak (yazar yoksa kaynak tek satır)
+    if (yazar) {
+      ctx.fillStyle = c.text;
+      ctx.font = "500 30px " + f.sans;
+      if ("letterSpacing" in ctx) ctx.letterSpacing = "2px";
+      ctx.fillText("— " + yazar, SIZE / 2, areaBottom + 62);
+      if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
+      ctx.fillStyle = c.dim;
+      ctx.font = "400 24px " + f.sans;
+      ctx.fillText(source, SIZE / 2, areaBottom + 104);
+    } else {
+      ctx.fillStyle = c.dim;
+      ctx.font = "400 26px " + f.sans;
+      ctx.fillText("— " + source, SIZE / 2, areaBottom + 80);
+    }
 
     // Alt imza
     ctx.fillStyle = c.gold;
@@ -181,10 +192,10 @@
     }
 
     function card() {
-      return render(
-        document.getElementById("quote").textContent,
-        document.getElementById("kaynak").textContent
-      );
+      var item = window.KADIM_AKTIF;
+      // Başlık ana kartla aynı: günün sözünde "Günün Kadim Sözü", gezintide "Kadim Söz"
+      var label = document.getElementById("today-eyebrow").textContent;
+      return render(label, item.text, item.yazar, item.kaynak);
     }
 
     copyBtn.addEventListener("click", function () {

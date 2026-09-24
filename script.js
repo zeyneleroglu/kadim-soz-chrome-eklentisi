@@ -13,6 +13,7 @@
 
   var quoteEl = document.getElementById("quote");
   var kaynakEl = document.getElementById("kaynak");
+  var yazarEl = document.getElementById("yazar");
   var eyebrowEl = document.getElementById("today-eyebrow");
   var prevBtn = document.getElementById("quote-prev");
   var nextBtn = document.getElementById("quote-next");
@@ -27,7 +28,9 @@
     window.KADIM_AKTIF = item;
 
     quoteEl.textContent = item.text;
-    kaynakEl.textContent = "— " + item.kaynak;
+    yazarEl.textContent = item.yazar ? "— " + item.yazar : "";
+    yazarEl.hidden = !item.yazar;
+    kaynakEl.textContent = item.yazar ? item.kaynak : "— " + item.kaynak;
     eyebrowEl.textContent = isToday ? "Günün Kadim Sözü" : "Kadim Söz";
     posEl.textContent = (index + 1) + " / " + total;
     homeBtn.hidden = isToday;
