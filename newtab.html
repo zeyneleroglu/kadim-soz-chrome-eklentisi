@@ -22,6 +22,17 @@
     <figure class="card">
       <blockquote id="quote" class="quote">Yükleniyor…</blockquote>
       <figcaption id="kaynak" class="kaynak"></figcaption>
+      <div class="share" role="group" aria-label="Sözü görsel olarak paylaş">
+        <button id="share-copy" class="share-btn" type="button" title="Sözü görsel kart olarak panoya kopyala">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span>Kart olarak kopyala</span>
+        </button>
+        <button id="share-download" class="share-btn" type="button" title="Sözü arka planlı PNG olarak indir">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>
+          <span>Görsel indir</span>
+        </button>
+      </div>
+      <p id="share-status" class="share-status" role="status" aria-live="polite"></p>
     </figure>
 
     <form class="search" action="https://www.google.com/search" method="GET" target="_blank">
@@ -43,5 +54,6 @@
 
   <script src="data.js"></script>
   <script src="script.js"></script>
+  <script src="share.js"></script>
 </body>
 </html>
