@@ -2,8 +2,9 @@
   "manifest_version": 3,
   "name": "Zeynel Eroğlu — Günün Kadim Sözü",
   "short_name": "Kadim Söz",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Her yeni sekmede, kadim kültürlerden ve Türkiye'de Medyum Olmak kitabından ilham alan kısa bir söz. Veri toplamaz.",
+  "homepage_url": "https://zeyneleroglu.com/turkiyede-medyum-olmak-tarayici-eklentisi/",
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
