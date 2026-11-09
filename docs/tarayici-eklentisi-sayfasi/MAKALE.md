@@ -37,6 +37,8 @@ Eklenti yalın kalacak şekilde tasarlandı. Her özellik yeni sekme sayfasını
 | Sözlerde arama | Kelime, kaynak veya yazar adına göre süzer | Saklanmaz |
 | Kart olarak paylaşma | Sözü görsel kart olarak kopyalar veya indirir | Yalnız cihazınızda |
 | Koyu / açık tema | Okuma rahatlığı için renkleri değiştirir | Yalnız tarayıcınızda |
+| Site kısayolları | Sık kullandığınız siteleri tek tıkla açar | Yalnız tarayıcınızda |
+| Google uygulamaları | Gmail, Çeviri, Haritalar gibi servislere hızlı geçiş sağlar | Saklanmaz |
 
 ## Sözlerde Arama ve Favoriler
 
@@ -56,9 +58,9 @@ Eklenti kendi başına hiçbir sunucuya bağlanmaz ve uzaktan kod yüklemez. Tü
 
 Sayfadaki web arama kutusu sorgunuzu doğrudan Google'a gönderir. Bu arama Google'ın kendi gizlilik koşullarına tabidir.
 
-Favoriler ve tema tercihi tarayıcının yerel depolamasında tutulur. Bu bilgiler başka bir cihaza veya kişiye aktarılmaz.
+Favoriler, kısayollar ve tema tercihi tarayıcının yerel depolamasında tutulur. Bu bilgiler başka bir cihaza veya kişiye aktarılmaz.
 
-Tarayıcı verilerinizi temizlerseniz favorileriniz de silinir. Eklenti ek bir izin istemez.
+Tarayıcı verilerinizi temizlerseniz favorileriniz de silinir. Eklentinin istediği tek izin, kısayollarda site simgelerini Chrome'un kendi önbelleğinden göstermek içindir.
 
 Ayrıntılar için [eklentinin gizlilik politikasını](https://zeyneleroglu.com/gizlilik-politikasi-tarayici-eklentisi/) okuyabilirsiniz. Kaynak kodu açıktır ve [GitHub üzerinde](https://github.com/zeyneleroglu/kadim-soz-chrome-eklentisi) incelenebilir.
 
