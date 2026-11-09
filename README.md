@@ -23,6 +23,8 @@ kitabından ve kadim kültürel geleneklerden derlenen kısa, bilgilendirici bir
 - `theme.js` — koyu/açık tema geçişi (tercih yalnızca yerel `localStorage`'da tutulur)
 - `share.js` — günün sözünü 1080×1080 PNG kart olarak panoya kopyalama / indirme (tamamen yerel, canvas ile)
 - `search.js` — "Ara" sekmesi; söz metni, kaynak ve yazarda anlık, Türkçe karakter duyarsız arama (`/` kısayolu)
+- `shortcuts.js` — web sitesi kısayolları (ekle / düzenle / kaldır); liste yalnızca yerel `localStorage`'da tutulur, site simgeleri Chrome'un yerel favicon önbelleğinden gelir (`favicon` izni)
+- `launcher.js` — sağ üstteki Gmail, Görseller ve Google uygulamaları menüsü (yerel SVG simgeler)
 - `favorites.js` — "Favorilerim" sekmesi; favoriler yalnızca yerel `localStorage`'da tutulur
 - `data.js` — kitaptan ve kadim kültürel kaynaklardan derlenen söz listesi (her kayıt: `text`, `kaynak`, `yazar`)
 - `icons/` — eklenti simgeleri

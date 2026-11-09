@@ -172,6 +172,7 @@
     // "/" kısayolu: yazı alanında değilken arama sekmesini açar
     document.addEventListener("keydown", function (e) {
       if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
+      if (document.querySelector("dialog[open]")) return; // kısayol penceresi açıkken
       var t = e.target;
       if (t.closest && t.closest("input, textarea") || t.isContentEditable) return;
       e.preventDefault();

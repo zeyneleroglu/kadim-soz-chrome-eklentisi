@@ -68,6 +68,7 @@
     var t = e.target;
     if (t.closest && (t.closest("input, textarea, [role=tablist]") || t.isContentEditable)) return;
     if (document.getElementById("panel-today").hidden) return;
+    if (document.querySelector("dialog[open]")) return; // kısayol penceresi açıkken
     e.preventDefault();
     go(e.key === "ArrowLeft" ? -1 : 1);
   });
